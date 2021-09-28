@@ -8,7 +8,7 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const multer = require("multer");
 const path = require("path");
-const Cors = require("cors");
+const cors = require("cors");
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //Middlewares
 app.use(express.json());
-app.use(Cors());
+app.use(cors());
 app.use(helmet());
 app.use(morgan("common"));
 
